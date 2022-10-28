@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<!--0xd3bAe0266b268ABb8296B7FC52DC67C5aC9817560xd3bAe0266b268ABb8296B7FC52DC67C5aC981756-->
+<html>
+    <head>
+	    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+	    <script>
+		const web3 = new Web3(Web3.givenProvider || "ws://localhost:7545");
+		web3.eth.getAccounts().then(e => { 
+		 firstAccount = e[0];
+		 console.log("A: " + firstAccount);
+		}) 
+		var abi = [
+		    {
+		      "inputs": [
+			{
+			  "internalType": "uint256",
+			  "name": "num1",
+			  "type": "uint256"
+			},
+			{
+			  "internalType": "uint256",
+			  "name": "num2",
+			  "type": "uint256"
+			}
+		      ],
+		      "name": "add",
+		      "outputs": [
+			{
+			  "internalType": "uint256",
+			  "name": "",
+			  "type": "uint256"
+			}
+		      ],
+		      "stateMutability": "view",
+		      "type": "function",
+		      "constant": true
+		    },
+		    {
+		      "inputs": [
+			{
+			  "internalType": "uint256",
+			  "name": "num1",
+			  "type": "uint256"
+			},
+			{
+			  "internalType": "uint256",
+			  "name": "num2",
+			  "type": "uint256"
+			}
+		      ],
+		      "name": "subtract",
+		      "outputs": [
+			{
+			  "internalType": "uint256",
+			  "name": "",
+			  "type": "uint256"
+			}
+		      ],
+		      "stateMutability": "view",
+		      "type": "function",
+		      "constant": true
+		    },
+		    {
+		      "inputs": [
+			{
+			  "internalType": "uint256",
+			  "name": "num1",
+			  "type": "uint256"
+			},
+			{
+			  "internalType": "uint256",
+			  "name": "num2",
+			  "type": "uint256"
+			}
+		      ],
+		      "name": "multiply",
+		      "outputs": [
+			{
+			  "internalType": "uint256",
+			  "name": "",
+			  "type": "uint256"
+			}
+		      ],
+		      "stateMutability": "view",
+		      "type": "function",
+		      "constant": true
+		    },
+		    {
+		      "inputs": [
+			{
+			  "internalType": "uint256",
+			  "name": "num1",
+			  "type": "uint256"
+			},
+			{
+			  "internalType": "uint256",
+			  "name": "num2",
+			  "type": "uint256"
+			}
+		      ],
+		      "name": "divide",
+		      "outputs": [
+			{
+			  "internalType": "uint256",
+			  "name": "",
+			  "type": "uint256"
+			}
+		      ],
+		      "stateMutability": "view",
+		      "type": "function",
+		      "constant": true
+		    }
+		  ];
+		var address = "0x4e9610D5bA3df3638f7bD572Ede56a961d905177";
+	    	var contract = new web3.eth.Contract(abi, address);
+		contract.methods.add(2,2).call(function (err, res) {
+		  if (err) {
+		    console.log("An error occured", err)
+		    return
+		  }
+		    console.log(res);
+		})
+	    </script>
+    </head>
+
+    <title>Smart_Contract</title>
+    <body>
+        <!-- the content goes here -->
+    </body>
+</html>
