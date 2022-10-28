@@ -1,0 +1,32 @@
+PROJECT DETAILS
+
+##################################################################################
+##################################################################################
+Phase 1:
+
+##################################################################################
+##################################################################################
+Phase 2:
+
+Design and implement the SRapp, the whole web3 stack, the logic (rules, policies etc.) using smart con-
+tract(s), off-chain and on-chain data methods, wallet operations and others you may need for realizing
+the SRapp.
+	1. Design first: You will derive the requirements for the SRapp based on the use case diagram of phase
+		Note: These requirements and specifications of the SRapp will be expressed using (i) contract diagram(s)
+		that express the static structure of your smart contracts and (ii) sequence diagram(s) to express the
+		dynamics of the operations of the SRapp.
+	2. Develop smart contracts: Code the smart contracts and test them thoroughly. This will form the
+	SRapp-contract package.
+	3. Design and develop the UI: Design and develop the UI from phase 1 and implement the web-stack of
+	the SRapp. This will form the SRapp-app package. Now the interaction will be through the local web
+	UI and the wallet keeping track of accounts.
+	4. Note: As you design and develop this application, consider features that will help with the tokenization
+	of the next phase (Phase 3).
+
+What submit?
+	1. A short video demonstrating the working of the SRapp, all its functions, and requirements.
+	2. A report with all the design documents, explanation of the design decisions, and development – UML
+	diagrams for smart contract design.
+	3. Code base for us to try your project. Remove all the executables before you submit the zip file;
+	otherwise, the zip file will be too large.
+	4. An original architectural diagram explaining your smart contracts and the relationship among them.
