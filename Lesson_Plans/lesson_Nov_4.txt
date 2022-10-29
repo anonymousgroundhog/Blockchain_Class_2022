@@ -1,0 +1,5 @@
+Things to discuss:
+- Unit testing the smart contracts
+- Implementing HTML and Javascript to connect to smart contract using web3.js
+- Testing code using console.log and console window in firefox/chrome
+- Using git to backup code
