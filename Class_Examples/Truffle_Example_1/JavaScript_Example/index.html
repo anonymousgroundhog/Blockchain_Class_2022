@@ -7,8 +7,8 @@
 	    <script>
 		const web3 = new Web3(Web3.givenProvider || "ws://localhost:7545");
 		web3.eth.getAccounts().then(e => { 
-		 firstAccount = e[0];
-		 console.log("A: " + firstAccount);
+		 web3.eth.defaultAccount = e[0]
+		 console.log("A: " + e[0]);
 		}) 
 		var abi = [
 		    {
@@ -112,20 +112,33 @@
 		      "constant": true
 		    }
 		  ];
-		var address = "0x4e9610D5bA3df3638f7bD572Ede56a961d905177";
-	    	var contract = new web3.eth.Contract(abi, address);
+		var address = "0x783c75406C0a0849678415Dd19B760aD347Ac5a0";
+	    	var contract = new web3.eth.Contract(abi, address, web3.eth.defaultAccount);
 		contract.methods.add(2,2).call(function (err, res) {
 		  if (err) {
 		    console.log("An error occured", err)
 		    return
 		  }
-		    console.log(res);
+		    console.log("ANS:"+res);
 		})
+
+		async function myFunction(firstnumber, secondnumber){
+		    	const ans = await contract.methods.add(firstnumber,secondnumber).call();
+		    	alert(String(ans));
+		}
+
 	    </script>
     </head>
 
     <title>Smart_Contract</title>
     <body>
         <!-- the content goes here -->
+
+	<!-- ADD IN FORM TO INTERACT WITH SMART CONTRACT HERE -->
+	<form id="frm1" action="javascript:void(0);" onSubmit="myFunction()">
+	  First Number: <input type="number" name="fnumber" id="fnumber"><br>
+	  Second Number: <input type="number" name="snumber" id="snumber"><br><br>
+	  <input type="button" onclick="myFunction(document.getElementById('fnumber').valueAsNumber, document.getElementById('snumber').valueAsNumber)" value="Submit">
+	</form>
     </body>
 </html>
