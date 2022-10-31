@@ -1,0 +1,19 @@
+Quiz Questions
+
+What is the purpose of unit testing your smart contract?
+A) Ensures that smart contracts don’t have bugs 
+B) Ensuring that your smart contracts can be used by JavaScript to add data to the blockchain.
+C) Faster and more robust development
+D) All of the above
+
+The command used by truffle to setup your directory structure is:
+A) truffle init
+B) truffle compile
+C) truffle deploy
+D) truffle migrate
+
+What library is used by JavaScript to connect to the smart contract?
+A) web3j
+B) web
+C) solidity
+D) truffle
