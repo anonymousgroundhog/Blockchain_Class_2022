@@ -1,0 +1,22 @@
+Phase 2 Project Grading (45%)
+######################################################################
+######################################################################
+
+
+1. A short video demonstrating the working of the SRapp, all its functions, and requirements.
+	- students should have a clear and easy to follow video. (5pts)
+	- app and all methods should be working properly (5pts)
+	- requirements should be stated clearly in the video (5pts)
+
+2. A report with all the design documents, explanation of the design decisions, and development – UML diagrams for smart contract design.
+	- Design documents are clear and properly formatted (5pts)
+	- UML diagram components are correctly used (5pts)
+	- Design decisions are clearly stated (5pts)
+
+3. Code base for us to try your project. Remove all the executables before you submit the zip file; otherwise, the zip file will be too large.
+	- Code base is provided
+
+4. An original architectural diagram explaining your smart contracts and the relationship among them.
+	- Architectural diagram is provided (5pts)
+	- Diagram is properly formatted (5pts)
+	- Smart contracts and relationships among them are clearly identified. (5pts)
