@@ -5,11 +5,10 @@
     <head>
 	    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
 	    <script>
-		const web3 = new Web3(Web3.givenProvider || "ws://localhost:7545");
-		web3.eth.getAccounts().then(e => { 
-		 web3.eth.defaultAccount = e[0]
-		 console.log("A: " + e[0]);
-		}) 
+		const web3 = new Web3("https://goerli.infura.io/v3/c073a257a84047dbb7eb5dbb9f879953");
+		web3.eth.defaultAccount = '0x08CE054604aE8dd2f8eF2B73F962EB621F679Afc';
+		console.log("Accounts:" + web3.eth.defaultAccount);
+
 		var abi = [
 		    {
 		      "inputs": [
@@ -112,33 +111,26 @@
 		      "constant": true
 		    }
 		  ];
-		var address = "0xCedd84cD1EACA5B2b42FE369646C3ec1502b33E4";
+		var address = "0xF082d719c10cB1104E244532d2bBeb46b4088739";
 	    	var contract = new web3.eth.Contract(abi, address, web3.eth.defaultAccount);
-		contract.methods.add(2,2).call(function (err, res) {
-		  if (err) {
-		    console.log("An error occured", err)
-		    return
-		  }
-		    console.log("ANS:"+res);
-		})
-
+		
 		async function myFunction(firstnumber, secondnumber){
 		    	const ans = await contract.methods.add(firstnumber,secondnumber).call();
-		    	alert(String(ans));
+		    	alert("The answer is: "+String(ans));
 		}
-
 	    </script>
     </head>
 
     <title>Smart_Contract</title>
     <body>
         <!-- the content goes here -->
+	<h1>Simple Calculator App</h1>
 
 	<!-- ADD IN FORM TO INTERACT WITH SMART CONTRACT HERE -->
 	<form id="frm1" action="javascript:void(0);" onSubmit="myFunction()">
-	  First Number: <input type="number" name="fnumber" id="fnumber"><br>
-	  Second Number: <input type="number" name="snumber" id="snumber"><br><br>
-	  <input type="button" onclick="myFunction(document.getElementById('fnumber').valueAsNumber, document.getElementById('snumber').valueAsNumber)" value="Submit">
+		<b>First Number</b>: <input type="number" name="fnumber" id="fnumber"><br>
+		<b>Second Number</b>: <input type="number" name="snumber" id="snumber"><br><br>
+	  <input type="button" onclick="myFunction(document.getElementById('fnumber').valueAsNumber, document.getElementById('snumber').valueAsNumber)" value="Add">
 	</form>
     </body>
 </html>

@@ -2751,12 +2751,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x783c75406C0a0849678415Dd19B760aD347Ac5a0",
-      "transactionHash": "0x82bc3ffdfa13fab09e2ff7474d41ae7bb38ad0e2e89f05105b68c69100662528"
+      "address": "0xCedd84cD1EACA5B2b42FE369646C3ec1502b33E4",
+      "transactionHash": "0x004798539cbbc627bbeda44ade7da30ebf7792e29a79938d0550042c1cd62321"
     }
   },
   "schemaVersion": "3.4.10",
-  "updatedAt": "2022-10-31T17:39:43.043Z",
+  "updatedAt": "2022-11-04T18:06:11.734Z",
   "networkType": "ethereum",
   "devdoc": {
     "custom:dev-run-script": "./scripts/deploy_with_ethers.ts",
