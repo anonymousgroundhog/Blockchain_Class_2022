@@ -62,16 +62,26 @@
          web3.eth.defaultAccount= "0x59F2F580Ff35B7707325C7364154F50FfDf3BC6E";
          var contract = new web3.eth.Contract(abi, "0x786AFEB23Fd34fe7E1f07Ece189904D280434824");
          
-         async function sendData(){
-         	var sent = await contract.methods.CreateRetailer("2","3","4").send({from: web3.eth.defaultAccount});
+         async function sendData(email, name, address){
+         	var sent = await contract.methods.CreateRetailer(email, name, address).send({from: web3.eth.defaultAccount});
          	console.log(sent);
-         	var get = await contract.methods.Getretailer("2").call();
+         	var get = await contract.methods.Getretailer(email).call();
          	console.log(get);
          }
-         sendData();
+         //sendData();
              
       </script>   
       <title >Manufacturer Registartion</title>
    </head>
-   <body></body>
+   <body>
+	   <h1>Manufacturer Registration</h1>
+	   <center>
+		<form id="frm1" action="javascript:void(0);" onSubmit="myFunction()">
+		  Email: <input type="string" name="email" id="email"><br>
+		  Name: <input type="string" name="name" id="name"><br><br>
+		  Address: <input type="string" name="address" id="address"><br><br>
+		  <input type="button" onclick="sendData(document.getElementById('email').value, document.getElementById('name').value, document.getElementById('address').value)" value="Submit">
+		</form>
+	   </center>
+   </body>
 </html>
