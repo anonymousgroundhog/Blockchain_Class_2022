@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <script type="text/javascript" src="abi.json"></script>
+      <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+      <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <script type='text/javascript'>
+         const abi = 
+         [
+         {
+         	"inputs": [],
+         	"stateMutability": "payable",
+         	"type": "constructor"
+         },
+         {
+         	"inputs": [
+         		{
+         			"internalType": "string",
+         			"name": "email",
+         			"type": "string"
+         		},
+         		{
+         			"internalType": "string",
+         			"name": "name",
+         			"type": "string"
+         		},
+         		{
+         			"internalType": "string",
+         			"name": "loc",
+         			"type": "string"
+         		}
+         	],
+         	"name": "CreateRetailer",
+         	"outputs": [],
+         	"stateMutability": "nonpayable",
+         	"type": "function"
+         },
+         {
+         	"inputs": [
+         		{
+         			"internalType": "string",
+         			"name": "mail",
+         			"type": "string"
+         		}
+         	],
+         	"name": "Getretailer",
+         	"outputs": [
+         		{
+         			"internalType": "string",
+         			"name": "",
+         			"type": "string"
+         		},
+         		{
+         			"internalType": "string",
+         			"name": "",
+         			"type": "string"
+         		}
+         	],
+         	"stateMutability": "view",
+         	"type": "function"
+         }
+         ];
+         const web3 = new Web3(Web3.givenProvider || "ws://localhost:7545");
+         var contract_address = "0xf82c6bFBf6d3c41e56336376f7B4fa009C56a814";
+         web3.eth.defaultAccount= "0x08cE12310403Db822C60c140648f5F1E6e143DEA";
+         var contract = new web3.eth.Contract(abi, contract_address, web3.eth.defaultAccount);
+         
+         async function sendData(){
+         	var sent = await contract.methods.CreateRetailer("2","3","4").send({from: web3.eth.defaultAccount});
+         	console.log(sent);
+         	var get = await contract.methods.Getretailer("2").call();
+         	console.log(get);
+         }
+         sendData();
+             
+      </script>   
+      <title >Manufacturer Registartion</title>
+   </head>
+   <body></body>
+</html>
